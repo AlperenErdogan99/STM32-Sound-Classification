@@ -1,0 +1,9 @@
+my_model.c:403:9:my_model_configure_activations	24	static
+my_model.c:436:9:my_model_configure_weights	24	static
+my_model.c:475:9:ai_my_model_get_info	136	static
+my_model.c:522:10:ai_my_model_get_error	16	static
+my_model.c:528:10:ai_my_model_create	24	static
+my_model.c:538:11:ai_my_model_destroy	16	static
+my_model.c:544:9:ai_my_model_init	24	static
+my_model.c:561:8:ai_my_model_run	24	static
+my_model.c:568:8:ai_my_model_forward	16	static

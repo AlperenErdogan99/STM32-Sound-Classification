@@ -1,0 +1,462 @@
+{
+    "_allocate_inputs": 0,
+    "_allocate_outputs": 0,
+    "cli_parameters": "generate --name my_model -m C:/Users/alperen/Desktop/MikroUygProje/model/Final_Model_Dosyalari/my_model (3).tflite --type tflite --compression 1 --verbosity 1 --workspace C:\\Users\\alperen\\AppData\\Local\\Temp\\mxAI_workspace386860836803600346871699880704192 --output C:\\Users\\alperen\\.stm32cubemx",
+    "cli_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 4
+    },
+    "cli_version_str": "1.4.0",
+    "compression": {
+        "factor": null,
+        "layers": {}
+    },
+    "date_time": "Thu Dec 31 23:43:08 2020",
+    "error": 0,
+    "error_str": [],
+    "evaluation_measures": [],
+    "evaluation_status": "NOT EVALUATED",
+    "exec_cmd": "generate",
+    "exec_duration": 0.8122708797454834,
+    "hash": "f79cd1239c87c5574745c31a263ada3b",
+    "inputs": [
+        "flatten_4_input"
+    ],
+    "l2_error": -1.0,
+    "l2_status": "NOT EVALUATED",
+    "layers": [
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": {
+                    "c_size": 936,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        234,
+                        1
+                    ]
+                },
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "flatten_4_input",
+            "out_shapes": [
+                [
+                    13,
+                    1,
+                    18
+                ]
+            ],
+            "outputs": [
+                "flatten_4_input"
+            ],
+            "shape": [
+                13,
+                1,
+                18
+            ],
+            "type": "Input"
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": null,
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 0,
+            "inputs": [
+                "flatten_4_input"
+            ],
+            "name": "reshape_0",
+            "out_shapes": [
+                [
+                    234
+                ]
+            ],
+            "outputs": [
+                "reshape_0"
+            ],
+            "shape": [
+                234
+            ],
+            "type": "Reshape"
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 29952,
+                "n_params": 30080,
+                "psize": 30464,
+                "rom_n_params": 30080,
+                "rom_output": {
+                    "c_size": 512,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        128,
+                        1
+                    ]
+                },
+                "rom_size": 120320,
+                "rom_size_params": 120320,
+                "rom_trans": null
+            },
+            "id": 1,
+            "inputs": [
+                "reshape_0"
+            ],
+            "name": "dense_1",
+            "num_units": 128,
+            "out_shapes": [
+                [
+                    128
+                ]
+            ],
+            "outputs": [
+                "dense_1"
+            ],
+            "type": "Dense",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 128,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": {
+                    "c_size": 512,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        128,
+                        1
+                    ]
+                },
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 1,
+            "inputs": [
+                "dense_1"
+            ],
+            "name": "nl_1",
+            "nonlinearity": "relu",
+            "out_shapes": [
+                [
+                    128
+                ]
+            ],
+            "outputs": [
+                "nl_1"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 16384,
+                "n_params": 16512,
+                "psize": 16896,
+                "rom_n_params": 16512,
+                "rom_output": {
+                    "c_size": 512,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        128,
+                        1
+                    ]
+                },
+                "rom_size": 66048,
+                "rom_size_params": 66048,
+                "rom_trans": null
+            },
+            "id": 2,
+            "inputs": [
+                "nl_1"
+            ],
+            "name": "dense_2",
+            "num_units": 128,
+            "out_shapes": [
+                [
+                    128
+                ]
+            ],
+            "outputs": [
+                "dense_2"
+            ],
+            "type": "Dense",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 128,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": {
+                    "c_size": 512,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        128,
+                        1
+                    ]
+                },
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 2,
+            "inputs": [
+                "dense_2"
+            ],
+            "name": "nl_2",
+            "nonlinearity": "relu",
+            "out_shapes": [
+                [
+                    128
+                ]
+            ],
+            "outputs": [
+                "nl_2"
+            ],
+            "type": "Nonlinearity"
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 384,
+                "n_params": 387,
+                "psize": 1548,
+                "rom_n_params": 387,
+                "rom_output": {
+                    "c_size": 12,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 1548,
+                "rom_size_params": 1548,
+                "rom_trans": null
+            },
+            "id": 3,
+            "inputs": [
+                "nl_2"
+            ],
+            "name": "dense_3",
+            "num_units": 3,
+            "out_shapes": [
+                [
+                    3
+                ]
+            ],
+            "outputs": [
+                "dense_3"
+            ],
+            "type": "Dense",
+            "use_bias": true
+        },
+        {
+            "extras": {
+                "c_l2_error": 0,
+                "c_l2_id": -1,
+                "n_macc": 45,
+                "n_params": 0,
+                "psize": 0,
+                "rom_n_params": 0,
+                "rom_output": {
+                    "c_size": 12,
+                    "fmt": {
+                        "c_bits": [
+                            32,
+                            0
+                        ],
+                        "c_format": "AI_ARRAY_FORMAT_FLOAT",
+                        "c_size": 4,
+                        "c_type": "ai_float",
+                        "format": "FLOAT32"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 0,
+                "rom_size_params": 0,
+                "rom_trans": null
+            },
+            "id": 4,
+            "inputs": [
+                "dense_3"
+            ],
+            "name": "nl_4",
+            "nonlinearity": "softmax",
+            "out_shapes": [
+                [
+                    3
+                ]
+            ],
+            "outputs": [
+                "nl_4"
+            ],
+            "type": "Nonlinearity"
+        }
+    ],
+    "maxlen_name": 23,
+    "md5": "f79cd1239c87c5574745c31a263ada3b",
+    "model_files": [
+        "C:\\Users\\alperen\\Desktop\\MikroUygProje\\model\\Final_Model_Dosyalari\\my_model (3).tflite"
+    ],
+    "model_n_params": 46979,
+    "model_name": "my_model_3",
+    "model_size": 48908,
+    "model_type": "tflite (tflite)",
+    "name": "my_model",
+    "outputs": [
+        "nl_4"
+    ],
+    "ram_io_size": [
+        936,
+        12
+    ],
+    "ram_size": [
+        1024,
+        1024
+    ],
+    "report_version": 1.0,
+    "rom_cfact": 2.842234399280281,
+    "rom_heap": [
+        0,
+        0
+    ],
+    "rom_heap_inspector": 2048,
+    "rom_inputs": [
+        {
+            "c_size": 936,
+            "c_type": "ai_float",
+            "name": "flatten_4_input"
+        }
+    ],
+    "rom_l2_error_max": 0.0,
+    "rom_n_c_nodes": 6,
+    "rom_n_macc": 47021,
+    "rom_n_macc_max": 29952,
+    "rom_outputs": [
+        {
+            "c_size": 12,
+            "c_type": "ai_float",
+            "name": "nl_4"
+        }
+    ],
+    "rom_size": 187916,
+    "rom_size_max": 120320,
+    "rom_stack": [
+        0,
+        0
+    ],
+    "strategy": "heap_overlay_pool",
+    "tools_api_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 3
+    },
+    "tools_version": {
+        "extra": null,
+        "major": 5,
+        "micro": 0,
+        "minor": 2
+    },
+    "version": "0.2"
+}
